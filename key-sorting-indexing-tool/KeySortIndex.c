@@ -27,7 +27,7 @@ struct CharIndex {
 typedef struct CharIndex IndexCHR;
 
 void Open() {
-    FILE *fp;
+    	FILE *fp;
 	char buffer[1024];
 	
 	fp = fopen("test.json","r");
@@ -36,28 +36,28 @@ void Open() {
 
 	parsed_json = json_tokener_parse(buffer);
 
-    json_object_object_get_ex(parsed_json, "dataFileName", &dataFileName);
+    	json_object_object_get_ex(parsed_json, "dataFileName", &dataFileName);
 	json_object_object_get_ex(parsed_json, "indexFileName", &indexFileName);
-    json_object_object_get_ex(parsed_json, "recordLength", &recordLength);
+    	json_object_object_get_ex(parsed_json, "recordLength", &recordLength);
 	json_object_object_get_ex(parsed_json, "keyEncoding", &keyEncoding);
-    json_object_object_get_ex(parsed_json, "keyStart", &keyStart);
+    	json_object_object_get_ex(parsed_json, "keyStart", &keyStart);
 	json_object_object_get_ex(parsed_json, "keyEnd", &keyEnd);
-    json_object_object_get_ex(parsed_json, "order", &order);
+    	json_object_object_get_ex(parsed_json, "order", &order);
 
 
-    printf("datafilename: %s\n", json_object_get_string(dataFileName));
+    	printf("datafilename: %s\n", json_object_get_string(dataFileName));
 	printf("indexfilename: %s\n", json_object_get_string(indexFileName));
-    printf("recordlength: %d\n", json_object_get_int(recordLength));
+    	printf("recordlength: %d\n", json_object_get_int(recordLength));
 	printf("keyencoding: %s\n", json_object_get_string(keyEncoding));
-    printf("keystart: %d\n", json_object_get_int(keyStart));
-    printf("keyend: %d\n", json_object_get_int(keyEnd));
-    printf("order: %s\n", json_object_get_string(order));
+    	printf("keystart: %d\n", json_object_get_int(keyStart));
+    	printf("keyend: %d\n", json_object_get_int(keyEnd));
+    	printf("order: %s\n", json_object_get_string(order));
 }
 int compareIndexCHRASC(const void* a, const void* b){       ////  FOR CHR
 	return (strcmp(((IndexCHR*)a)->key, ((IndexCHR*)b)->key));
 }
 int compareIndexCHRDESC(const void* a, const void* b){     ////   FOR CHR
-    return -(strcmp(((IndexCHR*)a)->key, ((IndexCHR*)b)->key));    
+    	return -(strcmp(((IndexCHR*)a)->key, ((IndexCHR*)b)->key));    
 }
 void CreateIndexFileCHR(IndexCHR * indexes , int RECORD_COUNT){
     
