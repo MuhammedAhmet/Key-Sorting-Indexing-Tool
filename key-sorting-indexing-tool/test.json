@@ -1,0 +1,9 @@
+{
+    "dataFileName" : "sample.dat",
+    "indexFileName" : "data.ndx",
+    "recordLength" : 64,
+    "keyEncoding" : "CHR",
+    "keyStart" : 14,
+    "keyEnd" : 20,
+    "order" : "ASC"
+}
